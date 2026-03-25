@@ -79,20 +79,15 @@ function App() {
   const testimonials = [
     {
       name: 'Ayesha R.',
-      title: 'Founder, ByteCraft',
+      title: 'Frontend Lead, DevForge',
       quote:
-        'We replaced three tools with one. Our onboarding time dropped by 38% in the first week.',
-    },
-    {
-      name: 'Marcus J.',
-      title: 'PM, AtlasOps',
-      quote:
-        'The dashboard preview sold it internally. Setup was fast and the UI feels premium.',
+        'We launched our React landing page in a day and increased free-trial signups by 34% in two weeks.',
     },
     {
       name: 'Sana K.',
-      title: 'Growth Lead, Cloudly',
-      quote: 'Pricing is clear, and the product looks like it costs 10x more. Instant trust-builder.',
+      title: 'Indie Developer, ShipStack',
+      quote:
+        'The social proof + product preview made it feel like a real SaaS product, not a template. Clients noticed immediately.',
     },
   ]
 
@@ -150,7 +145,7 @@ function App() {
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/30 ring-1 ring-fuchsia-300/40 hover:brightness-110"
             >
               Start Free Trial
             </a>
@@ -175,17 +170,16 @@ function App() {
                 For SaaS founders and startup teams
               </div>
               <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Launch fast, modern React landing pages without coding hassle.
+                Build high-converting React landing pages in minutes
               </h1>
               <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-zinc-300 sm:text-lg">
-                Turn traffic into free-trial users with conversion-ready sections, product visuals, and
-                trust signals built for SaaS growth.
+                Launch fast, modern websites without coding stress
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#pricing"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-fuchsia-500/30 ring-1 ring-fuchsia-300/40 hover:brightness-110"
                 >
                   Start Free Trial
                 </a>
@@ -199,7 +193,7 @@ function App() {
               </div>
             </motion.div>
 
-            {/* Fake dashboard preview */}
+            {/* Dashboard preview */}
             <motion.div
               variants={motionIn}
               initial="hidden"
@@ -216,7 +210,7 @@ function App() {
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
                   </div>
-                  <div className="text-xs text-zinc-400">Dashboard Preview</div>
+                  <div className="text-xs text-zinc-400">Live Dashboard Preview</div>
                   <div className="text-xs text-zinc-500">saasly.app</div>
                 </div>
                 <div className="grid gap-4 p-4 sm:p-5">
@@ -262,9 +256,13 @@ function App() {
               </div>
               <div className="mt-4 flex items-center justify-between text-xs text-zinc-400">
                 <span>Interactive React dashboard preview included</span>
-                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                  No backend needed
-                </span>
+                <motion.span
+                  animate={reduceMotion ? {} : { opacity: [0.6, 1, 0.6] }}
+                  transition={reduceMotion ? {} : { duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                  className="rounded-full border border-emerald-300/30 bg-emerald-500/10 px-2 py-1 text-emerald-200"
+                >
+                  Live demo motion
+                </motion.span>
               </div>
             </motion.div>
           </div>
@@ -273,7 +271,7 @@ function App() {
         {/* SOCIAL PROOF */}
         <section className="border-t border-white/10 py-10">
           <div className="text-center">
-            <p className="text-sm font-semibold text-cyan-200">Trusted by 500+ startups and SaaS teams</p>
+            <p className="text-sm font-semibold text-cyan-200">Trusted by 100+ developers</p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-300">
               <Badge>3,200+ pages launched</Badge>
               <Badge>Average +31% trial signups</Badge>
@@ -320,19 +318,7 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <div className="aspect-[16/10] rounded-xl border border-white/10 bg-zinc-900/70 p-4">
-                <div className="h-full rounded-lg bg-[radial-gradient(circle_at_20%_20%,rgba(168,85,247,0.35),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(34,211,238,0.22),transparent_48%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-4">
-                  <div className="mb-4 h-3 w-28 rounded bg-white/20" />
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="h-16 rounded-lg bg-white/10" />
-                    <div className="h-16 rounded-lg bg-white/10" />
-                    <div className="h-16 rounded-lg bg-white/10" />
-                  </div>
-                  <div className="mt-4 h-28 rounded-lg bg-white/10" />
-                </div>
-              </div>
-            </div>
+            <ProductVisual reduceMotion={reduceMotion} />
           </motion.div>
         </section>
 
@@ -363,6 +349,25 @@ function App() {
                 <p className="mt-2 text-sm text-zinc-300">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* MIDDLE CTA */}
+        <section className="border-t border-white/10 py-16">
+          <div className="rounded-3xl border border-violet-400/30 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-500/10 p-8 text-center sm:p-10">
+            <p className="text-sm font-semibold text-violet-200">Ready to scale faster?</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Start your free trial and launch today.
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-zinc-200">
+              One clear goal. One high-converting path. Start free and publish your page in minutes.
+            </p>
+            <a
+              href="#pricing"
+              className="mt-7 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-fuchsia-500/30 ring-1 ring-fuchsia-300/40 hover:brightness-110"
+            >
+              Start Free Trial
+            </a>
           </div>
         </section>
 
@@ -667,7 +672,7 @@ function App() {
                 type="submit"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/15 hover:brightness-110"
               >
-                Send message
+                Start Free Trial
               </button>
               <p className="mt-3 text-xs text-zinc-400">
                 By submitting, you agree to our pretend terms.
@@ -766,6 +771,77 @@ function EventRow({ title, meta }) {
         <div className="truncate text-[11px] text-zinc-400">{meta}</div>
       </div>
       <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400/90" />
+    </div>
+  )
+}
+
+function ProductVisual({ reduceMotion }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+      <div className="overflow-hidden rounded-xl border border-white/10 bg-zinc-900/80">
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+          </div>
+          <div className="text-xs text-zinc-300">saasly.app/dashboard</div>
+          <div className="rounded-full border border-cyan-300/30 bg-cyan-500/10 px-2 py-1 text-[10px] font-semibold text-cyan-200">
+            UI Demo
+          </div>
+        </div>
+
+        <div className="grid gap-0 sm:grid-cols-[130px_1fr]">
+          <aside className="border-r border-white/10 bg-zinc-950/50 p-3">
+            <div className="space-y-2">
+              <div className="h-7 rounded-md bg-white/10" />
+              <div className="h-7 rounded-md bg-white/5" />
+              <div className="h-7 rounded-md bg-white/5" />
+              <div className="h-7 rounded-md bg-white/5" />
+            </div>
+          </aside>
+
+          <div className="relative overflow-hidden p-4">
+            <motion.div
+              aria-hidden
+              animate={reduceMotion ? {} : { x: ['-100%', '100%'] }}
+              transition={reduceMotion ? {} : { duration: 2.6, repeat: Infinity, ease: 'linear' }}
+              className="pointer-events-none absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            />
+            <div className="grid grid-cols-3 gap-3">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                <div className="text-[11px] text-zinc-400">Visitors</div>
+                <div className="mt-1 text-sm font-semibold text-white">82.4k</div>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                <div className="text-[11px] text-zinc-400">Trials</div>
+                <div className="mt-1 text-sm font-semibold text-white">1,942</div>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                <div className="text-[11px] text-zinc-400">CVR</div>
+                <div className="mt-1 text-sm font-semibold text-emerald-300">6.4%</div>
+              </div>
+            </div>
+
+            <div className="mt-3 rounded-lg border border-white/10 bg-white/5 p-3">
+              <div className="mb-2 text-xs text-zinc-300">Conversion trend</div>
+              <div className="flex h-20 items-end gap-2">
+                {[28, 36, 40, 47, 54, 62, 58, 69].map((h, i) => (
+                  <motion.div
+                    key={`${h}-${i}`}
+                    initial={reduceMotion ? false : { height: 8 }}
+                    whileInView={reduceMotion ? {} : { height: h }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={reduceMotion ? {} : { duration: 0.45, delay: i * 0.04, ease: 'easeOut' }}
+                    className="w-full rounded-t bg-gradient-to-t from-violet-500/70 to-cyan-400/80"
+                    style={{ height: reduceMotion ? h : 8 }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
