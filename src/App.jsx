@@ -150,12 +150,6 @@ function App() {
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
-              className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 sm:inline-flex"
-            >
-              View pricing
-            </a>
-            <a
-              href="#final-cta"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
             >
               Start Free Trial
@@ -178,19 +172,19 @@ function App() {
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                Trusted by 500+ SaaS teams
+                For SaaS founders and startup teams
               </div>
               <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Build high-converting landing pages in minutes without coding.
+                Launch fast, modern React landing pages without coding hassle.
               </h1>
               <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-zinc-300 sm:text-lg">
-                Launch faster, increase trial signups, and look enterprise-ready with a page built to
-                convert from headline to checkout.
+                Turn traffic into free-trial users with conversion-ready sections, product visuals, and
+                trust signals built for SaaS growth.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  href="#final-cta"
+                  href="#pricing"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
                 >
                   Start Free Trial
@@ -267,7 +261,7 @@ function App() {
                 </div>
               </div>
               <div className="mt-4 flex items-center justify-between text-xs text-zinc-400">
-                <span>Bonus: fake dashboard preview included</span>
+                <span>Interactive React dashboard preview included</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
                   No backend needed
                 </span>
@@ -280,6 +274,11 @@ function App() {
         <section className="border-t border-white/10 py-10">
           <div className="text-center">
             <p className="text-sm font-semibold text-cyan-200">Trusted by 500+ startups and SaaS teams</p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-300">
+              <Badge>3,200+ pages launched</Badge>
+              <Badge>Average +31% trial signups</Badge>
+              <Badge>4.9/5 founder rating</Badge>
+            </div>
             <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-zinc-300 sm:grid-cols-3 lg:grid-cols-6">
               {logos.map((logo) => (
                 <div
@@ -314,7 +313,7 @@ function App() {
               </p>
               <div className="mt-6">
                 <a
-                  href="#final-cta"
+                  href="#pricing"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
                 >
                   Start Free Trial
@@ -460,7 +459,7 @@ function App() {
                   <div className="pb-1 text-sm text-zinc-400">/mo</div>
                 </div>
                 <a
-                  href="#final-cta"
+                  href="#pricing"
                   className={[
                     'mt-6 inline-flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold text-white',
                     p.highlight
@@ -713,7 +712,7 @@ function App() {
             <a className="hover:text-white" href="#pricing">
               Pricing
             </a>
-            <a className="hover:text-white" href="#contact">
+            <a className="hover:text-white" href="#pricing">
               Start Free Trial
             </a>
           </div>
