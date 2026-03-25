@@ -23,28 +23,28 @@ function App() {
 
   const features = [
     {
-      title: 'Realtime insights',
-      desc: 'Track revenue, churn, and activation with a dashboard your team actually checks.',
+      title: 'Launch pages in minutes',
+      desc: 'Go from idea to published landing page in under 30 minutes without writing a single line of code.',
     },
     {
-      title: 'Automations that save hours',
-      desc: 'Trigger emails, tasks, and webhooks when customers hit key milestones.',
+      title: 'Turn more visitors into trial users',
+      desc: 'Use proven conversion blocks that help teams lift trial signups by up to 27% in the first month.',
     },
     {
-      title: 'Security by default',
-      desc: 'SSO-ready architecture, audit logs, and roles that scale with your org.',
+      title: 'Load 3x faster on mobile',
+      desc: 'Reduce bounce rate with performance-first sections optimized for speed and readability.',
     },
     {
-      title: 'Templates & playbooks',
-      desc: 'Prebuilt flows for onboarding, renewals, winbacks, and upsells.',
+      title: 'Ship confidently with social proof',
+      desc: 'Drop in testimonials, trust badges, and metrics so new visitors trust your offer instantly.',
     },
     {
-      title: 'Built for teams',
-      desc: 'Comments, assignments, and approvals—no more “who owns this?”',
+      title: 'Edit once, stay on-brand',
+      desc: 'Customize headlines, colors, and pricing in one place to keep every section consistent.',
     },
     {
-      title: 'Delightful UX',
-      desc: 'Fast, responsive, and polished. Your customers notice the difference.',
+      title: 'Scale from MVP to growth',
+      desc: 'Start simple, then add advanced blocks like case studies and product walkthroughs as you grow.',
     },
   ]
 
@@ -96,6 +96,8 @@ function App() {
     },
   ]
 
+  const logos = ['NovaLabs', 'Peakly', 'Cloudnest', 'OrbitHQ', 'Metricly', 'LaunchPilot']
+
   const faqs = [
     {
       q: 'Is this a real SaaS?',
@@ -141,8 +143,8 @@ function App() {
             <a className="hover:text-white" href="#faq">
               FAQ
             </a>
-            <a className="hover:text-white" href="#contact">
-              Contact
+            <a className="hover:text-white" href="#how-it-works">
+              How it works
             </a>
           </nav>
           <div className="flex items-center gap-3">
@@ -153,10 +155,10 @@ function App() {
               View pricing
             </a>
             <a
-              href="#contact"
+              href="#final-cta"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
             >
-              Get Started
+              Start Free Trial
             </a>
           </div>
         </div>
@@ -176,28 +178,22 @@ function App() {
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                Launch-ready landing page template
+                Trusted by 500+ SaaS teams
               </div>
               <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Convert visitors into customers with a modern SaaS landing page.
+                Build high-converting landing pages in minutes without coding.
               </h1>
               <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-zinc-300 sm:text-lg">
-                Dark, premium UI. Smooth animations. Clear pricing. Social proof. Everything you need
-                to ship fast and look expensive.
+                Launch faster, increase trial signups, and look enterprise-ready with a page built to
+                convert from headline to checkout.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  href="#contact"
+                  href="#final-cta"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
                 >
-                  Get Started
-                </a>
-                <a
-                  href="#features"
-                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                >
-                  See features
+                  Start Free Trial
                 </a>
               </div>
 
@@ -280,6 +276,97 @@ function App() {
           </div>
         </section>
 
+        {/* SOCIAL PROOF */}
+        <section className="border-t border-white/10 py-10">
+          <div className="text-center">
+            <p className="text-sm font-semibold text-cyan-200">Trusted by 500+ startups and SaaS teams</p>
+            <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-zinc-300 sm:grid-cols-3 lg:grid-cols-6">
+              {logos.map((logo) => (
+                <div
+                  key={logo}
+                  className="rounded-xl border border-white/10 bg-white/5 px-3 py-3 font-semibold tracking-wide"
+                >
+                  {logo}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PRODUCT DEMO */}
+        <section className="border-t border-white/10 py-16">
+          <motion.div
+            variants={motionUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="grid items-center gap-8 lg:grid-cols-2"
+          >
+            <div className="text-left">
+              <p className="text-sm font-semibold text-violet-300">Product demo</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                See exactly what your clients will experience.
+              </h2>
+              <p className="mt-3 max-w-xl text-zinc-300">
+                Live-style dashboard blocks and animated interactions help prospects understand your value
+                in seconds, not minutes.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="#final-cta"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
+                >
+                  Start Free Trial
+                </a>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="aspect-[16/10] rounded-xl border border-white/10 bg-zinc-900/70 p-4">
+                <div className="h-full rounded-lg bg-[radial-gradient(circle_at_20%_20%,rgba(168,85,247,0.35),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(34,211,238,0.22),transparent_48%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-4">
+                  <div className="mb-4 h-3 w-28 rounded bg-white/20" />
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="h-16 rounded-lg bg-white/10" />
+                    <div className="h-16 rounded-lg bg-white/10" />
+                    <div className="h-16 rounded-lg bg-white/10" />
+                  </div>
+                  <div className="mt-4 h-28 rounded-lg bg-white/10" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section id="how-it-works" className="border-t border-white/10 py-16">
+          <motion.div
+            variants={motionUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="text-left"
+          >
+            <p className="text-sm font-semibold text-emerald-300">How it works</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Three steps to launch and convert.
+            </h2>
+          </motion.div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              { step: '01', title: 'Sign up', desc: 'Create your account and pick a conversion-focused template.' },
+              { step: '02', title: 'Customize', desc: 'Edit content, brand colors, and pricing in minutes.' },
+              { step: '03', title: 'Launch', desc: 'Publish and start collecting qualified free-trial leads.' },
+            ].map((item) => (
+              <div key={item.step} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <div className="text-xs font-semibold text-violet-300">{item.step}</div>
+                <h3 className="mt-2 text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-zinc-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* FEATURES */}
         <section id="features" className="border-t border-white/10 py-16">
           <motion.div
@@ -292,10 +379,10 @@ function App() {
           >
             <p className="text-sm font-semibold text-violet-300">Features</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Everything you need to look premium.
+              Outcomes your clients actually care about.
             </h2>
             <p className="mt-3 max-w-2xl text-zinc-300">
-              Crisp sections, strong hierarchy, and subtle motion that makes the page feel alive.
+              Every feature is mapped to a business result: faster launches, better conversions, and lower bounce.
             </p>
           </motion.div>
 
@@ -338,7 +425,7 @@ function App() {
           >
             <p className="text-sm font-semibold text-fuchsia-300">Pricing</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Simple plans that make sense.
+              Simple pricing, no surprises.
             </h2>
             <p className="mt-3 max-w-2xl text-zinc-300">
               Transparent tiers with a clear “best value” highlight.
@@ -373,7 +460,7 @@ function App() {
                   <div className="pb-1 text-sm text-zinc-400">/mo</div>
                 </div>
                 <a
-                  href="#contact"
+                  href="#final-cta"
                   className={[
                     'mt-6 inline-flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold text-white',
                     p.highlight
@@ -381,7 +468,7 @@ function App() {
                       : 'border border-white/10 bg-white/5 hover:bg-white/10',
                   ].join(' ')}
                 >
-                  Get started
+                  Start Free Trial
                 </a>
                 <ul className="mt-6 space-y-3 text-sm text-zinc-300">
                   {p.perks.map((perk) => (
@@ -439,6 +526,39 @@ function App() {
               </motion.figure>
             ))}
           </div>
+        </section>
+
+        {/* CASE STUDY */}
+        <section className="border-t border-white/10 py-16">
+          <motion.div
+            variants={motionUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8"
+          >
+            <p className="text-sm font-semibold text-amber-300">Case study</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              From 2.1% to 6.4% trial conversion in 21 days.
+            </h2>
+            <p className="mt-3 max-w-3xl text-zinc-300">
+              A B2B startup replaced a generic template headline and weak CTA with this conversion-focused
+              structure. Result: 3x more trial signups from the same traffic.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl border border-white/10 bg-zinc-950/40 p-4">
+                <div className="text-xs font-semibold text-zinc-400">Before</div>
+                <div className="mt-2 text-sm text-zinc-200">Generic headline, no proof, scattered CTAs.</div>
+              </div>
+              <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-4">
+                <div className="text-xs font-semibold text-emerald-200">After</div>
+                <div className="mt-2 text-sm text-emerald-100">
+                  Clear value proposition, social proof, product demo, and one dominant CTA.
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* FAQ */}
@@ -556,6 +676,26 @@ function App() {
             </form>
           </motion.div>
         </section>
+
+        {/* FINAL CTA */}
+        <section id="final-cta" className="border-t border-white/10 py-16">
+          <div className="rounded-3xl border border-fuchsia-400/30 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-500/10 p-8 text-center sm:p-12">
+            <p className="text-sm font-semibold text-fuchsia-200">Ready to launch?</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              Start your free trial today.
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-zinc-200">
+              Build a SaaS landing page that looks premium, feels trustworthy, and converts visitors into
+              users.
+            </p>
+            <a
+              href="#pricing"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 hover:brightness-110"
+            >
+              Start Free Trial
+            </a>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t border-white/10 py-10">
@@ -574,7 +714,7 @@ function App() {
               Pricing
             </a>
             <a className="hover:text-white" href="#contact">
-              Get Started
+              Start Free Trial
             </a>
           </div>
         </div>
